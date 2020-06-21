@@ -8,6 +8,7 @@ public class Alumne {
         byte[] framebuffer = pictris.getFrameBuffer();
 
         // Write your code here
+        //Capullo
 
     }
 
