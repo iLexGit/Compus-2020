@@ -9,13 +9,13 @@ public class Alumne {
 
     public static void sendFramebuffer(PICtris pictris, SerialPort serialPort) {
         byte[] framebuffer = pictris.getFrameBuffer();
+
+        serialPort.writeBytes(framebuffer, framebuffer.length);
         // Write your code here
 
     }
 
     public static void getInput(PICtris pictris, SerialPort serialPort) {
-        //System.out.println("getInput");
-         //String RX_char = serialPort.readBytes(RX_buffer, 8);
         byte[] RX_buffer = new byte[1];
         serialPort.readBytes(RX_buffer, 1);
 
@@ -46,20 +46,6 @@ public class Alumne {
             System.out.println(RX_String + "\themos recibido una B = Drop to bottom");
             pictris.hardDrop();
         }
-
-
-
-
-        /* Example code:
-           pictris.move(-1); // Moves the current piece 1 block to the left
-           pictris.move(1); // Moves the current piece 1 block to the right
-           pictris.rotate(); // Rotates the current piece
-           pictris.userDropDown(); // Drops the current piece 1 position
-           pictris.hardDrop(); // Drops the current piece to bottom
-         */
-        //SerialPort.getCommPort("HOLA ALEJANDRO");
-
-        // Write your code here
 
     }
 
