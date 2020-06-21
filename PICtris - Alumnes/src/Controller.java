@@ -146,15 +146,15 @@ public class Controller extends JPanel {
             f.setVisible(true);
 
 
-            try {
-                music = new MusicPlayer("PICtris - Alumnes/song/tetris.wav");
-            } catch (UnsupportedAudioFileException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (LineUnavailableException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                music = new MusicPlayer("PICtris - lumnes/song/tetris.wav");
+//            } catch (UnsupportedAudioFileException e) {
+//                e.printStackTrace();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            } catch (LineUnavailableException e) {
+//                e.printStackTrace();
+//            }
         }
 
         if (!port.openPort()) {
