@@ -8,7 +8,6 @@ public class Alumne {
         byte[] framebuffer = pictris.getFrameBuffer();
 
         // Write your code here
-        //Capullo
 
     }
 
@@ -20,7 +19,7 @@ public class Alumne {
            pictris.userDropDown(); // Drops the current piece 1 position
            pictris.hardDrop(); // Drops the current piece to bottom
          */
-        SerialPort.getCommPort("HOLA ALEJANDRO");
+        //SerialPort.getCommPort("HOLA ALEJANDRO");
 
         // Write your code here
 

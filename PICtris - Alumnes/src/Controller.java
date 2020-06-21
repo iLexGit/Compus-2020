@@ -147,7 +147,7 @@ public class Controller extends JPanel {
 
 
             try {
-                music = new MusicPlayer("song/tetris.wav");
+                music = new MusicPlayer("PICtris - Alumnes/song/tetris.wav");
             } catch (UnsupportedAudioFileException e) {
                 e.printStackTrace();
             } catch (IOException e) {
