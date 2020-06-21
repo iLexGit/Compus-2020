@@ -24,22 +24,27 @@ public class Alumne {
 
         if (RX_String.equals("W")){
             System.out.println(RX_String + "\themos recibido una W = Rotate");
+            pictris.rotate();
         }
 
         if (RX_String.equals("A")){
             System.out.println(RX_String + "\themos recibido una A = Left");
+            pictris.move(-1);
         }
 
         if (RX_String.equals("S")){
             System.out.println(RX_String + "\themos recibido una S = Down");
+            pictris.userDropDown();
         }
 
         if (RX_String.equals("D")){
             System.out.println(RX_String + "\themos recibido una D = Right");
+            pictris.move(+1);
         }
 
         if (RX_String.equals("B")){
             System.out.println(RX_String + "\themos recibido una B = Drop to bottom");
+            pictris.hardDrop();
         }
 
 

@@ -145,8 +145,6 @@ public class PICtris extends JPanel {
         }
     }
 
-
-
     public void hardDrop(){
         do {
             if (!collidesAt(pieceOrigin.x, pieceOrigin.y + 1, rotation)) {
