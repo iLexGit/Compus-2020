@@ -9,10 +9,14 @@ public class Alumne {
 
     public static void sendFramebuffer(PICtris pictris, SerialPort serialPort) {
         byte[] framebuffer = pictris.getFrameBuffer();
-
+        String s = new String(framebuffer);
         serialPort.writeBytes(framebuffer, framebuffer.length);
+        
+//        System.out.println("------------------------------------");
+//        for (int i=0; i<16; i++){
+//            System.out.println(framebuffer[i]);
+//        }
         // Write your code here
-
     }
 
     public static void getInput(PICtris pictris, SerialPort serialPort) {
@@ -53,7 +57,15 @@ public class Alumne {
     public static void gameOver(PICtris pictris, SerialPort serialPort) {
         int score = pictris.getScore();
 
-        // Write your code here
+        String GameOverMsg = new String("Game Over");
+        //String GameOverMsg = new String("Fi Del Joc");
 
+        if ((GameOverMsg.length()%2) == 0){
+            GameOverMsg = GameOverMsg + "*";
+        }else{
+            GameOverMsg = GameOverMsg + " *";
+        }
+        System.out.println(GameOverMsg);
+        // Write your code here
     }
 }
