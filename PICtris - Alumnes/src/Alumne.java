@@ -60,6 +60,7 @@ public class Alumne {
 
 
         String GameOverMsg = new String("Game Over");
+        GameOverMsg = "*" + GameOverMsg;
 
         if ((GameOverMsg.length()%2) == 0){
             GameOverMsg = GameOverMsg + "*";
