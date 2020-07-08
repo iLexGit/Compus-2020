@@ -63,9 +63,9 @@ public class Alumne {
         GameOverMsg = "*" + GameOverMsg;
 
         if ((GameOverMsg.length()%2) == 0){
-            GameOverMsg = GameOverMsg + "*";
-        }else{
             GameOverMsg = GameOverMsg + " *";
+        }else{
+            GameOverMsg = GameOverMsg + "*";
         }
 
         byte[] message = GameOverMsg.getBytes();
