@@ -9,7 +9,7 @@ public class Alumne {
 
     public static void sendFramebuffer(PICtris pictris, SerialPort serialPort) {
         byte[] framebuffer = pictris.getFrameBuffer();
-        String s = new String(framebuffer);
+        //String s = new String(framebuffer);
         serialPort.writeBytes(framebuffer, framebuffer.length);
         
 //        System.out.println("------------------------------------");
@@ -57,15 +57,26 @@ public class Alumne {
     public static void gameOver(PICtris pictris, SerialPort serialPort) {
         int score = pictris.getScore();
 
+
+
         String GameOverMsg = new String("Game Over");
-        //String GameOverMsg = new String("Fi Del Joc");
 
         if ((GameOverMsg.length()%2) == 0){
             GameOverMsg = GameOverMsg + "*";
         }else{
             GameOverMsg = GameOverMsg + " *";
         }
-        System.out.println(GameOverMsg);
-        // Write your code here
+
+        byte[] message = GameOverMsg.getBytes();
+
+        System.out.println(message);
+
+        String recovered = new String(message);
+        System.out.println(recovered);
+
+
+        serialPort.writeBytes(message, message.length);
+
+
     }
 }
