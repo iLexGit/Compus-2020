@@ -1,7 +1,10 @@
 import com.fazecast.jSerialComm.SerialPort;
+import com.sun.source.tree.Scope;
 
 import javax.management.remote.rmi.RMIServerImpl_Stub;
+import java.io.StreamCorruptedException;
 import java.nio.Buffer;
+import java.nio.ByteBuffer;
 
 public class Alumne {
 
@@ -57,27 +60,29 @@ public class Alumne {
     public static void gameOver(PICtris pictris, SerialPort serialPort) {
         int score = pictris.getScore();
 
+        String score_String =  String.valueOf(score);
 
-
-        String GameOverMsg = new String("Game Over");
-        GameOverMsg = "*" + GameOverMsg;
-
-        if ((GameOverMsg.length()%2) == 0){
-            GameOverMsg = GameOverMsg + " *";
-        }else{
-            GameOverMsg = GameOverMsg + "*";
+        if(score <10){
+            score_String = "000" + score_String;
+        }else if(score<100){
+            score_String = "00" + score_String;
+        }else if (score < 1000){
+            score_String = "0" + score_String;
         }
 
-        byte[] message = GameOverMsg.getBytes();
+        //byte[] score_byte = score_String.getBytes();
 
-        System.out.println(message);
+        String GameOverMsg = new String("HAS PERDIDO POR TONTO");
 
-        String recovered = new String(message);
-        System.out.println(recovered);
+//        if ((GameOverMsg.length()%2) == 0){
+//            GameOverMsg = GameOverMsg + " "; //doble espai
+//        }
 
+        GameOverMsg = "*" + GameOverMsg + "*" + score_String + "*";
 
-        serialPort.writeBytes(message, message.length);
+        byte[] GameOverMsg_byte = GameOverMsg.getBytes();
 
+        serialPort.writeBytes(GameOverMsg_byte, GameOverMsg_byte.length);
 
     }
 }
